@@ -7,7 +7,7 @@ defmodule PfuWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_pfu_key",
-    signing_salt: "olfeq6zA"
+    signing_salt: "kgUJ7o1J"
   ]
 
   socket "/socket", PfuWeb.UserSocket,

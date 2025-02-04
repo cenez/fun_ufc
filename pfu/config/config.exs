@@ -13,10 +13,10 @@ config :pfu,
 # Configures the endpoint
 config :pfu, PfuWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "/fJ9n5YWNbFEwXGgNSf6QtQFj89+pa6C7wOzg+h4bIorN8Y9VtRCFFRTj9XQrhew",
+  secret_key_base: "YT9HBRB3sTeqyGmxhX86PcTJvXgPcVQklfMJtQTrVz0ZEOUp4MKiPE7QWf+m8xIc",
   render_errors: [view: PfuWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Pfu.PubSub,
-  live_view: [signing_salt: "NiZHpulo"]
+  live_view: [signing_salt: "dr629y26"]
 
 # Configures Elixir's Logger
 config :logger, :console,
