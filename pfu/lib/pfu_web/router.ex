@@ -18,6 +18,7 @@ defmodule PfuWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    get "/hello/:name", HelloController, :world
   end
 
   # Other scopes may use custom stacks.
