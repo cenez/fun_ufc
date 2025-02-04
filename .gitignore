@@ -39,4 +39,6 @@ npm-debug.log
 *.beam
 /config/*.secret.exs
 .elixir_ls/
+package-lock.json
+mix.lock
 
