@@ -1,8 +1,8 @@
-defmodule Ufc.Usuario do
-  use Ufc.Schema
-  alias Ufc.Usuario
+defmodule Pfu.Usuario do
+  use Pfu.Esquema
+  alias Pfu.Usuario
 
-  esquema "users" do
+  esquema "usuarios" do
     :nome
     :username
     :password

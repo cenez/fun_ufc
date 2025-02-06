@@ -1,5 +1,5 @@
-defmodule Ufc.Schema do
-  alias Ufc.Schema
+defmodule Pfu.Esquema do
+  alias Pfu.Esquema
   defmacro esquema(_any, do: bloco) do
     {_, _, s} = bloco
     quote do
@@ -9,7 +9,7 @@ defmodule Ufc.Schema do
 
   defmacro __using__(_opts) do
     quote do
-      import Schema, only: [esquema: 2]
+      import Esquema, only: [esquema: 2]
     end
   end
 
