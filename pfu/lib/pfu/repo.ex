@@ -4,16 +4,14 @@ defmodule Pfu.Repo do
     adapter: Ecto.Adapters.Postgres
     alias Pfu.Pessoa
 
-    #Exemplos #################
-    def todos(Pessoa) do
-      [%Pessoa{id: 1, name: "Joao", password: "753", username: "joaozim"},
-      %Pessoa{id: 2, name: "Maria", password: "159", username: "mariazinha"},
-      %Pessoa{id: 3, name: "Ana", password: "321", username: "aninha"}]
+    def tudo(Pessoa) do
+      [%Pessoa{id: "1", name: "Joao", username: "joaozim", password: "753"},
+      %Pessoa{id: "2", name: "Maria", username: "mariazinha", password: "159"},
+      %Pessoa{id: "3", name: "Ana", username: "aninha", password: "321"}]
     end
-    def pega(module, id) do
-      pessoas = todos(module)
-      Enum.find pessoas, fn p -> p.id == id end
-    end
-    ###########################
+    def tudo(_module), do: []
 
+    def pega_by_id(module, id) do
+      Enum.find tudo(module), fn p -> p.id == id end
+    end
 end
