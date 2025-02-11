@@ -2,8 +2,8 @@ defmodule Pfu.Repo do
   use Ecto.Repo,
     otp_app: :pfu,
     adapter: Ecto.Adapters.Postgres
-    alias Pfu.User
     alias Pfu.Pessoa
+    #alias Pfu.User
 
 
     def tudo(Pessoa) do
@@ -23,3 +23,13 @@ defmodule Pfu.Repo do
     end
 
 end
+# Para testes de comunicação com o banco, pelo iex:
+#iex> alias Pfu.Repo
+#iex> Pfu.User
+#iex> francisco = %User{name: "Francisco Santos", username: "francisco", password: "123", password_hash: "#8@8*&&^^"}
+#iex> ana = %User{name: "Ana Fernandes Pereira", username: "ana", password: "987", password_hash: "8888*****^^^^^^"}
+#iex> Repo.insert(francisco)
+#iex> Repo.insert(ana)
+#iex> user = Repo.get(User, 2)
+#iex> User.changeset(user, %{password: "123"})
+#iex> Repo.update(User.changeset(Repo.get(User, 1), %{password: "123"}))

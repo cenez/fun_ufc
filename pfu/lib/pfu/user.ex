@@ -16,5 +16,18 @@ defmodule Pfu.User do #mix phx.gen.schema User users name:string username:string
     user
     |> cast(attrs, [:name, :username, :password, :password_hash])
     |> validate_required([:name, :username, :password])
+    |> validate_length(:username, min: 3, max: 16)
+    |> validate_length(:password, min: 3, max: 32)
+    |> unique_constraint(:username)
+    |> put_hash()
+  end
+  def put_hash(changeset) do
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash, Bcrypt.hash_pwd_salt(pass))
+      _ -> changeset
+    end
   end
 end
+#Testes:
+#iex> User.changeset(%User{name: "Pedro", username: "pedro", password: "123"}, %{password: "ufc"})

@@ -23,6 +23,7 @@ defmodule Pfu.Usuario do
     put_password_hash(user)
   end
   defp put_password_hash(user) do
-    Map.replace(user, :password, Comeonin.Bcrypt.hashpwsalt(user.password))
+    #Map.replace(user, :password, Comeonin.Bcrypt.hashpwsalt(user.password))
+    Map.replace(user, :password, Bcrypt.hash_pwd_salt(user.password))
   end
 end

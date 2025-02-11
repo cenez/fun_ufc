@@ -22,8 +22,9 @@ defmodule PfuWeb.Router do
     get "/pessoas", PessoaController, :index
     get "/pessoas/:id", PessoaController, :show
     ########## Com banco #######################
-    get "/users", UserController, :index
-    get "/users/:id", UserController, :show
+    #get "/users", UserController, :index
+    #get "/users/:id", UserController, :show
+    resources "/users", UserController, only: [:index, :show, :new, :create]#, :delete, :edit, :update]
   end
 
   # Other scopes may use custom stacks.
