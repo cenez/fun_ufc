@@ -12,9 +12,9 @@ defmodule Pfu.Repo do
       %Pessoa{id: "3", name: "Ana", username: "aninha", password: "321"}]
     end
 
-    def tudo(User) do
-      Pfu.Repo.all(User)
-    end
+    #def tudo(User) do
+    #  Pfu.Repo.all(User)
+    #end
 
     def tudo(_module), do: []
 
