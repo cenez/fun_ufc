@@ -19,8 +19,8 @@ defmodule PfuWeb.Router do
 
     live "/", PageLive, :index
     get "/hello/:name", HelloController, :world
-    #get "/pessoas", PessoaController, :index
-    #get "/pessoas/:id", PessoaController, :show
+    get "/pessoas", PessoaController, :index
+    get "/pessoas/:id", PessoaController, :show
 
   end
 

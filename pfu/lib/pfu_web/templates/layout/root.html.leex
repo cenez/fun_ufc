@@ -10,6 +10,12 @@
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
+    <center>
+    <h4>
+        <a href="/">HOME</a> :::
+        <b><%="PESSOAS" |> Phoenix.HTML.Link.link(to: "/pessoas")  %>
+    </h4>
+    </center>
     <%= @inner_content %>
   </body>
 </html>
