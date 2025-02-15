@@ -24,6 +24,7 @@ defmodule PfuWeb do
       import Plug.Conn
       import PfuWeb.Gettext
       alias PfuWeb.Router.Helpers, as: Routes
+      import PfuWeb.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
@@ -66,6 +67,7 @@ defmodule PfuWeb do
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
+      import PfuWeb.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
