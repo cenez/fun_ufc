@@ -1,6 +1,14 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
 @import "../node_modules/nprogress/nprogress.css";
+/* custons: */
+/*@import "~bootstrap/scss/bootstrap";
+@import "./custom.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+*/
 
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
