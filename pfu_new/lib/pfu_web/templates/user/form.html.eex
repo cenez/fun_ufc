@@ -1,0 +1,20 @@
+<%= form_for @changeset, @action, fn f -> %>
+    <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+            <p>Algo incorreto! Por favor, verificar erros abaixo.</p>
+        </div>
+    <% end %>
+    <div class="form-group">
+        <%= text_input f, :name, [class: "form-control", type: "text", placeholder: "Name", minlength: "3", required: true] %>
+        <%= error_tag f, :name %>
+    </div>
+    <div class="form-group">
+        <%= text_input f, :username, [class: "form-control", type: "text", placeholder: "Username", minlength: "3", required: true] %>
+        <%= error_tag f, :username %>
+    </div>
+    <div class="form-group">
+        <%= password_input f, :password, [class: "form-control", type: "password", placeholder: "Password", minlength: "3", required: true] %>
+        <%= error_tag f, :password %>
+    </div>
+    <%= submit "REGISTRAR", phx_disable_with: "SALVANDO ..." %>
+<% end %>

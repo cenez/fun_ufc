@@ -1,0 +1,25 @@
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, PfuWeb.PostLive.FormComponent,
+    id: @post.id || :new,
+    title: @page_title,
+    action: @live_action,
+    post: @post,
+    user_id: @current_user.id,
+    user: @current_user,
+    return_to: Routes.post_index_path(@socket, :index) %>
+<% end %>
+
+<%= if @current_user do %>
+  <h1>Timeline</h1>
+  <i class="fa fa-plus">
+    <span> <%= live_patch "NEW", to: Routes.post_index_path(@socket, :new) %> </span>
+  </i>
+<% else %>
+  <h4 style="color: red">Autenticar usuário para utilizar esta funcionalidade!!</h4>
+<% end %>
+
+<div id="posts" phx-update="replace">
+  <%= for post <- @posts do %>
+    <%= live_component(@socket, PfuWeb.PostLive.PostComponent, [id: post.id, post: post, current_user: @current_user, user: Pfu.Repo.get(User, post.user_id)]) %>
+  <% end %>
+</div>
